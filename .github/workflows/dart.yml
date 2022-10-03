@@ -12,9 +12,9 @@ jobs:
       matrix:
         include:
           - runs-on: ubuntu-latest
-            binary-name: gits-logtime
+            binary-name: gits-logtime-linux
           - runs-on: macos-latest
-            binary-name: gits-logtime
+            binary-name: gits-logtime-macos
           - runs-on: windows-latest
             binary-name: gits-logtime.exe
     runs-on: ${{ matrix.runs-on }}
@@ -49,4 +49,4 @@ jobs:
       - uses: softprops/action-gh-release@v1
         with:
           draft: false
-          files: bin-*
+          files: bin-*/*
