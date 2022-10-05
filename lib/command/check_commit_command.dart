@@ -35,5 +35,19 @@ fomrat:
 
 [optional footer(s)]''');
     }
+
+    final startRegex = RegExp(r'(#start:)(\s+)?(\d{2}):(\d{2})');
+    final endRegex = RegExp(r'(#end:)(\s+)?(\d{2}):(\d{2})');
+
+    if (RegExp(r'#start:(\s+)?').hasMatch(messageCommit)) {
+      if (!startRegex.hasMatch(messageCommit)) {
+        PrintHelper.errorWithExit('Start time format must be "#start: 00:00"');
+      }
+    }
+    if (RegExp(r'#end:(\s+)?').hasMatch(messageCommit)) {
+      if (!endRegex.hasMatch(messageCommit)) {
+        PrintHelper.errorWithExit('End time format must be "#end: 00:00"');
+      }
+    }
   }
 }
