@@ -66,9 +66,12 @@ Are you sure its correct?''', defaultValue: false);
     final path = join(current, '.git', 'hooks', 'post-commit');
     path.write('''#!/bin/sh
 
-message=\$(git log -1 --pretty=%B)
-gits-logtime add "\$message"
-''');
+BRANCH_NAME=\$(git branch | grep '*' | sed 's/* //')
+
+if [[ \$BRANCH_NAME != *"no branch"* ]]; then
+    message=\$(git log -1 --pretty=%B)
+    gits-logtime add "\$message"
+fi''');
 
     chmod(path, permission: '755');
     PrintHelper.generated(path);
@@ -89,8 +92,11 @@ gits-logtime change-time
     final path = join(current, '.git', 'hooks', 'commit-msg');
     path.write('''#!/bin/sh
 
-gits-logtime check-commit
-''');
+BRANCH_NAME=\$(git branch | grep '*' | sed 's/* //')
+
+if [[ \$BRANCH_NAME != *"no branch"* ]]; then
+    gits-logtime check-commit
+fi''');
 
     chmod(path, permission: '755');
     PrintHelper.generated(path);
