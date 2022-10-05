@@ -64,7 +64,11 @@ jobs:
           type: "zip"
           filename: "windows.zip"
           directory: bin-windows
+      - run: ls
       - uses: softprops/action-gh-release@v1
         with:
           draft: false
-          files: "*.zip"
+          files: |
+            bin-linux/linux.zip
+            bin-macos/macos.zip
+            bin-windows/windows.zip
