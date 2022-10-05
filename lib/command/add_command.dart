@@ -13,7 +13,7 @@ class AddCommand extends Command {
 
   @override
   void run() async {
-    final commitMessage = argResults?.rest.firstOrNull;
+    String? commitMessage = argResults?.rest.firstOrNull;
     if (commitMessage == null) return;
 
     final config = getConfig();
@@ -51,6 +51,9 @@ class AddCommand extends Command {
         endTime = DateTime(now.year, now.month, now.day, hour, minute);
       });
     }
+
+    commitMessage =
+        commitMessage.replaceAll(startRegex, '').replaceAll(endRegex, '');
 
     final result = await Service.addTimeEntry(
       apiKey: config.apiKey,
