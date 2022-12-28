@@ -30,8 +30,11 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 2. run command `gits-logtime init`
 3. input **API Key clockify**. API Key bisa didapatkan dengan cara :
     1. buka menu `profile setting` yang ada di pojok kanan atas di web clockify
+
     ![Profile Setting](/doc/profile-setting.png)
+    
     2. pada bagian paling bawah copy **API Key** nya
+
     ![Api Key](/doc/api-key-clockify.png)
 4. input nama workspace clockify
 5. input nama project clockify
