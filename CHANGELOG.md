@@ -1,6 +1,7 @@
 ## 0.3.1
 
 - fix: command init for windows gits-logtime.exe
+- add readme.md
 
 ## 0.3.0
 
