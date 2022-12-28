@@ -1,3 +1,7 @@
+## 0.3.1
+
+- fix: command init for windows gits-logtime.exe
+
 ## 0.3.0
 
 - feat add log gits-logtime.log

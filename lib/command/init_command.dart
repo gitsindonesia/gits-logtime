@@ -2,6 +2,7 @@ import 'package:args/command_runner.dart';
 import 'package:dcli/dcli.dart';
 import 'package:dcli/posix.dart';
 import 'package:gits_logtime/enum/type_start_time.dart';
+import 'package:gits_logtime/helper/platform_helper.dart';
 import 'package:gits_logtime/helper/print_helper.dart';
 import 'package:gits_logtime/models/config.dart';
 import 'package:gits_logtime/models/project.dart';
@@ -82,7 +83,7 @@ BRANCH_NAME=\$(git branch | grep '*' | sed 's/* //')
 
 if [[ \$BRANCH_NAME != *"no branch"* ]]; then
     message=\$(git log -1 --pretty=%B)
-    gits-logtime add "\$message"
+    ${PlatformHelper.commandGitsLogtime} add "\$message"
 fi''');
 
     chmod(path, permission: '755');
@@ -93,7 +94,7 @@ fi''');
     final path = join(current, '.git', 'hooks', 'post-checkout');
     path.write('''#!/bin/sh
 
-gits-logtime change-branch
+${PlatformHelper.commandGitsLogtime} change-branch
 ''');
 
     chmod(path, permission: '755');
@@ -107,7 +108,7 @@ gits-logtime change-branch
 BRANCH_NAME=\$(git branch | grep '*' | sed 's/* //')
 
 if [[ \$BRANCH_NAME != *"no branch"* ]]; then
-    gits-logtime check-commit
+    ${PlatformHelper.commandGitsLogtime} check-commit
 fi''');
 
     chmod(path, permission: '755');

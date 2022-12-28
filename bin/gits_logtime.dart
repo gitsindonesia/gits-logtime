@@ -28,7 +28,7 @@ void main(List<String> arguments) {
   try {
     final results = runner.argParser.parse(arguments);
     if (results.wasParsed('version')) {
-      PrintHelper.info('Gits Logtime 0.3.0');
+      PrintHelper.info('Gits Logtime 0.3.1');
       exit(0);
     }
   } catch (e) {

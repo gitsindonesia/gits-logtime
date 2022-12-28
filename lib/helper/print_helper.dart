@@ -10,9 +10,9 @@ abstract class PrintHelper {
     final dateLog =
         '${now.year}-${now.month}-${now.day} ${now.hour}:${now.minute}:${now.second}';
     if (exists(path)) {
-      path.append('$dateLog: $message');
+      path.append('$dateLog $message');
     } else {
-      path.write('$dateLog: $message');
+      path.write('$dateLog $message');
     }
   }
 
