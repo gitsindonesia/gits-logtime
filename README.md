@@ -5,7 +5,9 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 
 ## Cara Instalasi
 1. Unduh file aplikasi `*.zip` versi terbaru sesuai sistem operasi kalian, pada page release https://github.com/gitsindonesia/gits-logtime/releases 
+
 ![Page Release](/doc/release.png)
+
 2. extract file `*.zip`
 3. ingat - ingat tempat extract file tersebut (misal di `D:/folder` atau `~/folder`)
 
@@ -14,14 +16,17 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 5. run command `chmod +x gits-logtime`
 6. tambahkan PATH `gits-logtime` pada variable device
 7. jika melakukan command pada `gits-logtime` gagal, coba cek pada setting/privacy & security dan allow `gits-logtime`
-![Warning](/doc/mac1.png)
-![Allow Anyway](/doc/mac2.png)
+
+![Warning](/doc/mac1.png) ![Allow Anyway](/doc/mac2.png)
 
 ### Jika kamu pake Windows:
 4. tambahkan PATH folder hasil extract tadi ke environment variable
+
 ![Environment Variable](/doc/env.png)
+
 5. buka command prompt
 6. coba run command `gits-logtime` jika muncul tulisan `Get it simple command...` berarti sudah bisa digunakan
+
 ![Success command](/doc/cmd.png)
 
 ---
@@ -41,4 +46,5 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 6. input konfigurasi penyimpanan **start time nya**, apakah ketika **checkout branch** atau **last commit**
 7. konfirmasi konfigurasi yang telah di input
 8. jika berhasil maka akan ada tulisan `Config gits logtime & git hooks file created for this repository`
+
 ![Config Gits Logtime](/doc/all-config.png)
