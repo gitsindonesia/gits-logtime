@@ -1,6 +1,7 @@
 import 'package:args/command_runner.dart';
 import 'package:dcli/dcli.dart';
 import 'package:dcli/posix.dart';
+import 'package:gits_logtime/enum/type_start_time.dart';
 import 'package:gits_logtime/helper/print_helper.dart';
 import 'package:gits_logtime/models/config.dart';
 import 'package:gits_logtime/models/project.dart';
@@ -35,12 +36,22 @@ class InitCommand extends Command {
       format: (Project project) => project.name,
       options: projects,
     );
+    final type = menu(
+      prompt: 'Choose your type automatic start time:',
+      format: (TypeStartTime typeStartTime) => typeStartTime.description,
+      options: [
+        TypeStartTime.lastCommit,
+        TypeStartTime.changeBranch,
+      ],
+      defaultOption: TypeStartTime.lastCommit,
+    );
 
     final confirmed = confirm('''
 
 Yourname: ${user.name}
 Workspace: ${selectedWorkspace.name}
 Project: ${selectedProjects.name}
+Type Start Time: ${type.name}
 
 Are you sure its correct?''', defaultValue: false);
 
@@ -52,6 +63,7 @@ Are you sure its correct?''', defaultValue: false);
         workspaceId: selectedWorkspace.id,
         projectId: selectedProjects.id,
         startTime: DateTime.now(),
+        type: type.name,
       ),
     );
     createPostCommitHook();
@@ -81,7 +93,7 @@ fi''');
     final path = join(current, '.git', 'hooks', 'post-checkout');
     path.write('''#!/bin/sh
 
-gits-logtime change-time
+gits-logtime change-branch
 ''');
 
     chmod(path, permission: '755');

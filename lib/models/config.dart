@@ -7,6 +7,7 @@ class Config {
     required this.workspaceId,
     required this.projectId,
     required this.startTime,
+    required this.type,
   });
 
   final String apiKey;
@@ -14,6 +15,7 @@ class Config {
   final String workspaceId;
   final String projectId;
   final DateTime startTime;
+  final String type;
 
   Config copyWith({
     String? apiKey,
@@ -21,6 +23,7 @@ class Config {
     String? workspaceId,
     String? projectId,
     DateTime? startTime,
+    String? type,
   }) {
     return Config(
       apiKey: apiKey ?? this.apiKey,
@@ -28,6 +31,7 @@ class Config {
       workspaceId: workspaceId ?? this.workspaceId,
       projectId: projectId ?? this.projectId,
       startTime: startTime ?? this.startTime,
+      type: type ?? this.type,
     );
   }
 
@@ -38,6 +42,7 @@ class Config {
       'workspace_id': workspaceId,
       'project_id': projectId,
       'start_time': startTime.toIso8601String(),
+      'type': type,
     };
   }
 
@@ -49,6 +54,7 @@ class Config {
       projectId: map['project_id'] ?? '',
       startTime: DateTime.tryParse(map['start_time'] ?? '') ??
           DateTime.now().subtract(Duration(minutes: 30)),
+      type: map['type'] ?? '',
     );
   }
 

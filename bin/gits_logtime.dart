@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 import 'package:gits_logtime/command/add_command.dart';
-import 'package:gits_logtime/command/change_time_command.dart';
+import 'package:gits_logtime/command/change_branch_command.dart';
 import 'package:gits_logtime/command/check_commit_command.dart';
 import 'package:gits_logtime/command/init_command.dart';
 import 'package:gits_logtime/helper/print_helper.dart';
@@ -13,7 +13,7 @@ void main(List<String> arguments) {
         //* Command
         ..addCommand(InitCommand())
         ..addCommand(AddCommand())
-        ..addCommand(ChangeTimeCommand())
+        ..addCommand(ChangeBranchCommand())
         ..addCommand(CheckCommitCommand())
       //* End Command
       ;
@@ -28,7 +28,7 @@ void main(List<String> arguments) {
   try {
     final results = runner.argParser.parse(arguments);
     if (results.wasParsed('version')) {
-      PrintHelper.info('Gits Logtime 0.2.0');
+      PrintHelper.info('Gits Logtime 0.3.0');
       exit(0);
     }
   } catch (e) {

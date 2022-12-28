@@ -1,3 +1,9 @@
+## 0.3.0
+
+- feat add log gits-logtime.log
+- refactor rename command change-time to change-branch
+- feat add type start time for take start time when (lastCommit, changeBranch)
+
 ## 0.2.0
 
 - add validate for format commit #start and #end
