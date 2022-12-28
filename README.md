@@ -31,6 +31,7 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 
 ---
 ## Cara Penggunaan
+### Inisialisasi Project
 1. Buka terminal / command prompt di folder project yang akan kamu otomatisasi logtime nya
 2. run command `gits-logtime init`
 3. input **API Key clockify**. API Key bisa didapatkan dengan cara :
@@ -48,3 +49,13 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 8. jika berhasil maka akan ada tulisan `Config gits logtime & git hooks file created for this repository`
 
 ![Config Gits Logtime](/doc/all-config.png)
+
+### Logtime Otomatis
+1. `Start time` akan tercatat ketika checkout branch / last commit (sesuai konfigurasi)
+2. `End time` akan tercatat ketika push ke remote repository
+3. Bisa mengubah `start time` dan `end time` dengan menambahkan `#start: xx:xx` atau `#stop: xx:xx` pada commit message
+4. Setelah push ke repository maka logtime akan tercatat secara otomatis, dengan deskripsi sesuai dengan commit message ✨
+
+![Commit](/doc/commit.png)
+
+![Logtime](/doc/logtime.png)
