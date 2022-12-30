@@ -1,7 +1,7 @@
 # ✨Gits Logtime✨
 _Tools untuk mempermudah logtime kalian_
 
-Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian melakukan push ke repository ✨
+Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian melakukan commit ke repository ✨
 
 ## Cara Instalasi
 1. Unduh file aplikasi `*.zip` versi terbaru sesuai sistem operasi kalian, pada page release https://github.com/gitsindonesia/gits-logtime/releases 
@@ -52,9 +52,9 @@ Tools ini otomatis menambahkan logtime ke akun clockify kalian ketika kalian mel
 
 ### Logtime Otomatis
 1. `Start time` akan tercatat ketika checkout branch / last commit (sesuai konfigurasi)
-2. `End time` akan tercatat ketika push ke remote repository
+2. `End time` akan tercatat ketika commit
 3. Bisa mengubah `start time` dan `end time` dengan menambahkan `#start: xx:xx` atau `#stop: xx:xx` pada commit message
-4. Setelah push ke repository maka logtime akan tercatat secara otomatis, dengan deskripsi sesuai dengan commit message ✨
+4. Setelah commit, maka logtime akan tercatat secara otomatis, dengan deskripsi sesuai dengan commit message ✨
 
 ![Commit](/doc/commit.png)
 
